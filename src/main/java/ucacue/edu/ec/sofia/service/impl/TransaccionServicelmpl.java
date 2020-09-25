@@ -90,10 +90,11 @@ public class TransaccionServicelmpl extends   GenericCRUDServiceImpl <Transacion
             conn = DriverManager.getConnection("jdbc:postgresql://dbpostgresql-db/sofia-db1","postgres", "XaviNoob2016");
             conn.setAutoCommit(false);
 
-            File file = new ClassPathResource("/reports/libreta.jasper").getFile();
+
+            ClassPathResource resource = new ClassPathResource("/reports/libreta.jasper");
             HashMap<String,Object> parametros = new  HashMap<String,Object>();
             parametros.put("cuenta",idCuenta);
-            JasperPrint print = JasperFillManager.fillReport(file.getPath(), parametros, conn);
+            JasperPrint print = JasperFillManager.fillReport(resource.getInputStream(), parametros, conn);
             data = JasperExportManager.exportReportToPdf(print);
             repository.updateEstado(idCuenta);
 
