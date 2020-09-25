@@ -87,7 +87,7 @@ public class TransaccionServicelmpl extends   GenericCRUDServiceImpl <Transacion
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = null;
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/sofia-db1","postgres", "admin");
+            conn = DriverManager.getConnection("jdbc:postgresql://dbpostgresql-db/sofia-db1","postgres", "XaviNoob2016");
             conn.setAutoCommit(false);
 
             File file = new ClassPathResource("/reports/libreta.jasper").getFile();
