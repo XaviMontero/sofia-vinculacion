@@ -65,8 +65,8 @@ services:
     volumes:
       - ./front:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST=montecino.tech,www.kpyvara.com
-      - LETSENCRYPT_HOST=montecino.tech,www.kpyvara.com
+      - VIRTUAL_HOST=kpyvara.com,www.kpyvara.com
+      - LETSENCRYPT_HOST=kpyvara.com,www.kpyvara.com
       - LETSENCRYPT_EMAIL=xavi@kpyvara.com
     networks:
       - dockerwp
